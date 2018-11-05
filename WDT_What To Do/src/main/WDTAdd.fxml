@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="381.0" style="-fx-background-color: #2d3436;" stylesheets="@../CSS/Add.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.WDTAddGuiController">
+   <children>
+      <Text fill="WHITE" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Task">
+         <font>
+            <Font name="Century Gothic" size="26.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="date" layoutX="28.0" layoutY="79.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <TextField id="text-field" fx:id="title" layoutX="28.0" layoutY="113.0" prefHeight="23.0" prefWidth="319.0" promptText="Add Title Here..." />
+      <Button id="cancel" fx:id="cancelButton" layoutX="29.0" layoutY="221.0" mnemonicParsing="false" onAction="#cancelClick" prefHeight="32.0" prefWidth="80.0" text="Cancel">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button id="cancel" fx:id="addButton" layoutX="122.0" layoutY="220.0" mnemonicParsing="false" onAction="#addTaskClick" prefHeight="32.0" prefWidth="95.0" text="Add Task">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="description" layoutX="27.0" layoutY="146.0" prefHeight="23.0" prefWidth="319.0" promptText="Add Description Here..." />
+      <Button fx:id="low" layoutX="27.0" layoutY="180.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="37.0" text="Low">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button fx:id="high" layoutX="106.0" layoutY="180.0" mnemonicParsing="false" text="High">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+      <Button fx:id="mid" layoutX="69.0" layoutY="180.0" mnemonicParsing="false" text="Mid">
+         <font>
+            <Font size="10.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

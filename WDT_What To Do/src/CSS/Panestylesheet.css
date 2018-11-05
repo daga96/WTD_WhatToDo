@@ -1,0 +1,44 @@
+.pane {
+    -fx-tab-min-height: 100;
+    -fx-tab-max-height: 100;
+    -fx-tab-min-width: 20;
+    -fx-tab-max-width: 20;
+    -fx-padding: 0 -1 -1 0;
+    -fx-background-color:#2d3436;
+}
+
+#adding:selected * {
+-fx-image: url("img01.png");
+  }
+
+#viewing:selected *{
+   -fx-image: url("img02.png");     
+}
+
+#add1 {
+    -fx-background-color:#59d4db;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+    -fx-text-fill:  #2d3436;
+}
+
+#reload1 {
+    -fx-background-color:#59d4db;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+    -fx-text-fill: #2d3436;
+}
+
+#delete {
+    -fx-background-color:#59d4db;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0;
+    -fx-text-fill: #2d3436;
+}
+
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color:  #59d4db; 
+   
+}
+

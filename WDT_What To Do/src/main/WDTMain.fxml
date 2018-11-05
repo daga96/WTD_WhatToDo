@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="594.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.WDTMainGuiController">
+	<children>
+      <Pane prefHeight="421.0" prefWidth="594.0" stylesheets="@../CSS/Panestylesheet.css">
+         <children>
+      		<Text fill="WHITE" layoutX="65.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WDT ">
+      			<font>
+      				<Font name="Century Gothic" size="36.0" />
+      			</font>
+      		</Text>
+      		<Text fill="WHITE" layoutX="142.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What to do ?">
+      			<font>
+      				<Font name="Century Gothic" size="15.0" />
+      			</font>
+      		</Text>
+      		<ImageView fitHeight="59.0" fitWidth="44.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      			<image>
+      				<Image url="@../../bin/CSS/icon.png" />
+      			</image>
+      		</ImageView>
+      				<TableView fx:id="taskTable" fixedCellSize="0.0" layoutX="12.0" layoutY="140.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0">
+      					<columns>
+      						<TableColumn fx:id="date" maxWidth="3000.0" prefWidth="120.0" text="Date" />
+      						<TableColumn fx:id="title" prefWidth="150.0" text="Title" />
+      						<TableColumn fx:id="desc" prefWidth="184.0" resizable="false" text="Description" />
+                  <TableColumn fx:id="prio" minWidth="0.0" prefWidth="87.0" resizable="false" text="Priority" />
+      					</columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+      				</TableView>
+            <Button id="add1" fx:id="deleteButton" layoutX="281.0" layoutY="99.0" mnemonicParsing="false" onAction="#deleteClick" prefHeight="30.0" prefWidth="107.0" text="Delete " textAlignment="RIGHT">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../bin/CSS/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+      				<Button id="add1" fx:id="addButtonMain" layoutX="405.0" layoutY="99.0" mnemonicParsing="false" onAction="#onAddTask" prefHeight="30.0" prefWidth="107.0" text="Add Task" textAlignment="RIGHT">
+      					<graphic>
+      						<ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+      							<image>
+      								<Image url="@../../bin/CSS/add.png" />
+      							</image>
+      						</ImageView>
+      					</graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+      				</Button>
+         </children>
+      </Pane>
+	</children>
+	<stylesheets>
+	</stylesheets>
+</AnchorPane>
