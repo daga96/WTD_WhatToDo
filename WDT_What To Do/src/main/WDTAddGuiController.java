@@ -54,14 +54,14 @@ public class WDTAddGuiController implements Initializable {
 
 	}    
 	public void lowClick(){ 
-		
+
 	}
 	public void midClick(){ 
-		
+
 	}
 	public void highClick(){ 
-	
-}
+
+	}
 	public void addTaskClick(ActionEvent e) {
 
 		conn = handler.getConnection();
@@ -79,7 +79,7 @@ public class WDTAddGuiController implements Initializable {
 			PrepStat.setObject(1, date.getValue());
 			PrepStat.setString(2, title.getText());
 			PrepStat.setString(3, description.getText());
-					
+
 			PrepStat.executeUpdate();
 		} 
 
@@ -94,7 +94,7 @@ public class WDTAddGuiController implements Initializable {
 		alert.setContentText("Task created");
 		alert.showAndWait();
 		ClearFields();
-		
+
 	}
 
 
@@ -111,8 +111,7 @@ public class WDTAddGuiController implements Initializable {
 		stage.setTitle("WDT - What To Do");
 		stage.setScene(scene);
 		stage.show();       
-		
- 
+
 	}
 
 }	

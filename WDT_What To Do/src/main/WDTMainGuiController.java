@@ -14,6 +14,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,7 +24,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 
-public class WDTMainGuiController implements Initializable {
+public class WDTMainGuiController implements Initializable{
 	@FXML
 	Button addButtonMain;
 	@FXML
@@ -36,8 +38,8 @@ public class WDTMainGuiController implements Initializable {
 	@FXML
 	TableColumn<taskEvent, String> prio;
 	@FXML
-	
 	private WDTAddGuiController addTaskGuiController;
+	
 	Connection connection=null;
 	ResultSet ResultS=null;
 	DataBaseHandler handler;
@@ -73,7 +75,7 @@ public class WDTMainGuiController implements Initializable {
 
 		Stage close = (Stage) addButtonMain.getScene().getWindow();
 		close.close();
-		
+
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WDTAdd.fxml"));
 		Parent root = fxmlLoader.load();
 		Stage stage = new Stage();
@@ -84,12 +86,30 @@ public class WDTMainGuiController implements Initializable {
 		stage.showAndWait();
 
 	}
-	
-	public void deleteClick() {
-		//delete function allowing removing chosen element
-	}
 
-}
+	public void deleteClick() throws SQLException{
+		
+		int selectedIndex = taskTable.getSelectionModel().getSelectedIndex();
+		
+		    if(selectedIndex >= 0){
+		        connection = handler.getConnection();
+		        
+				String query1 = "DELETE FROM tasktable WHERE Title = ? ;";      
+				
+				PrepStat = connection.prepareStatement(query1);              
+		        PrepStat.setString(1, title.getId());
+		        PrepStat.execute();       
+		        
+		        taskTable.getItems().remove(selectedIndex);
+		    } else {
+		        Alert alert = new Alert(AlertType.ERROR);
+		        alert.setTitle("ERROR:");
+		        alert.setHeaderText("No task selected");
+		        alert.setContentText("Please select task to delete.");
+		        alert.showAndWait();
+		    }
+		}
+	}
 
 
 
