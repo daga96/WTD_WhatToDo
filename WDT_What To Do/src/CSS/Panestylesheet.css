@@ -22,11 +22,8 @@
     -fx-text-fill:  #2d3436;
 }
 
-#reload1 {
-    -fx-background-color:#59d4db;
-    -fx-background-radius: 20;
-    -fx-background-insets: 0;
-    -fx-text-fill: #2d3436;
+#add1: hover{
+	-fx-background-color:#1289A7;
 }
 
 #delete {

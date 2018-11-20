@@ -97,7 +97,7 @@ public class WDTMainGuiController implements Initializable{
 				String query1 = "DELETE FROM tasktable WHERE Title = ? ;";      
 				
 				PrepStat = connection.prepareStatement(query1);              
-		        PrepStat.setString(1, title.getText()); //  change -> so it search for title
+		        PrepStat.setString(1, title.getText()); 
 		        PrepStat.execute();       
 		        
 		        taskTable.getItems().remove(selectedIndex);
