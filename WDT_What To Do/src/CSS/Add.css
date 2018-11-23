@@ -5,67 +5,66 @@
     -fx-tab-max-width: 20;
     -fx-padding: 0 -1 -1 0;
     -fx-background-color:#2d3436;
+    -fx-border-radius: 5;
 
+}
+.radio-button .radio{
+-fx-border-width     : 1px   ;
+-fx-border-color     : #ffbe76 ;
+-fx-background-color : #ffbe76 ;
+-fx-background-image : null  ;
+-fx-border-radius    : 15px  ;
+}
+.radio-button .radio:selected{
+-fx-background-color : #ff7979 ;
+-fx-background-image : null  ;
+}
+.radio-button -radio:armed{
+-fx-background-color :#ffbe76 ;
+-fx-background-image : null  ;
+}
+.radio-button -radio:determinate{
+-fx-background-color : #ffbe76 ;
+-fx-background-image : null  ;
+}
+.radio-button -radio:indeterminate{
+-fx-background-color : #ffbe76 ;
+-fx-background-image : null  ;
 }
 
 #cancel {
-    -fx-background-color:#59d4db;
+    -fx-background-color:#ffbe76;
     -fx-background-radius: 20;
     -fx-background-insets: 0;
     -fx-text-fill: #3D4855;
 }
 
 #cancel:hover {
-  -fx-background-color: #1289A7;
+  -fx-background-color: #f0932b;
 
 }
-#low{
--fx-background-color: #55efc4;
--fx-text-fill: #2d3436;
--fx-background-radius: 20 0 0 20;
-
-}
-#mid{
--fx-background-color: #ffeaa7;
--fx-text-fill: #2d3436;
--fx-background-radius: 0 0 0 0;
-
-}
-
-#high{
--fx-background-color: #e17055;
--fx-text-fill: #2d3436;
--fx-background-radius: 0 20 20 0;
-
-}
-
 .date-picker{
--fx-background-radius:5 5 5 5;
+
 }
 
 .date-cell{
 -fx-background-color:#ffffff;
--fx-background-radius:5 5 5 5;
-
 }
 
 .date-picker > .arrow-button {
--fx-background-color: #59d4db;
+-fx-background-color: #ffbe76;
 }
 
 .date-picker-popup > * > .day-cell { 
     -fx-text-fill: black;
   }
 .date-picker-popup > * > .today:focused { 
-    -fx-background-color: #59d4db;
-    -fx-opacity:0.5;
-}
-.date-picker-popup > * > .spinner .button {
-    
+    -fx-background-color: #ffbe76;
+    -fx-opacity:0.2;
 }
 
 .date-picker-popup > * > .selected { 
-    -fx-background-color: #59d4db;
+    -fx-background-color:  #ffbe76;
     -fx-background-radius:5 5 5 5;
 }
 .date-picker-popup > .month-year-pane {
@@ -77,7 +76,7 @@
 .text-field {
  -fx-background-color: #2d3436;
  -fx-border-width: 0 0 2 0;
- -fx-border-color:#59d4db;
+ -fx-border-color:#ffbe76;
  -fx-text-fill: #ecf0f1;
         
 }
