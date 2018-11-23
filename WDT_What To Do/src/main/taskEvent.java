@@ -1,17 +1,25 @@
 package main;
 
 public class taskEvent {
-	String title,description;
+	String title,description,priority;
 	Object date;
 
-	public taskEvent(Object date, String title, String description) {
+
+	public taskEvent(Object date, String title, String description, String priority) {
 
 		this.date = date;
 		this.title = title;
 		this.description = description;
-		
+		this.priority=priority;
 	}
 
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
 
 	public String getTitle() {
 		return title;
@@ -39,11 +47,6 @@ public class taskEvent {
 		this.date = date;
 	}
 	
-	
-	public String toString()
-	{
-		return this.getDate()+" "+this.getTitle()+" "+this.getDescription();
-	}
 
 }
 

@@ -14,7 +14,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.Initializable;
@@ -38,32 +40,23 @@ public class WDTAddGuiController implements Initializable {
 	@FXML 
 	TextField description;
 	@FXML
-	Button low;
-	@FXML
-	Button mid;
-	@FXML
-	Button high;
-	@FXML
-	private WDTMainGuiController WDTMainGuiController;
+	ToggleGroup priority;
+	
+	
 
+				
 
-	String query ="INSERT INTO tasktable(Date,Title,Description)"+" VALUES (?,?,?)";
+	String query ="INSERT INTO tasktable(Date,Title,Description,Priority)"+" VALUES (?,?,?,?)";
 	public void initialize(URL url, ResourceBundle rb) {
 		handler=new DataBaseHandler();
 		// TODO
 
 	}    
-	public void lowClick(){ 
-
-	}
-	public void midClick(){ 
-
-	}
-	public void highClick(){ 
-
-	}
+	
 	public void addTaskClick(ActionEvent e) {
-
+		
+		RadioButton selectedRadioButton = (RadioButton) priority.getSelectedToggle();
+		
 		conn = handler.getConnection();
 
 		try
@@ -79,8 +72,10 @@ public class WDTAddGuiController implements Initializable {
 			PrepStat.setObject(1, date.getValue());
 			PrepStat.setString(2, title.getText());
 			PrepStat.setString(3, description.getText());
-
+			PrepStat.setString(4, selectedRadioButton.getText());
+			
 			PrepStat.executeUpdate();
+			conn.close();
 		} 
 
 		catch (SQLException e1)
@@ -111,7 +106,5 @@ public class WDTAddGuiController implements Initializable {
 		stage.setTitle("WDT - What To Do");
 		stage.setScene(scene);
 		stage.show();       
-
 	}
-
 }	

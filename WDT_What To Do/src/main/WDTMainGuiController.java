@@ -35,7 +35,10 @@ public class WDTMainGuiController implements Initializable {
 	TableColumn<taskEvent, String> title;
 	@FXML 
 	TableColumn<taskEvent, String> desc;
-	@FXML
+	@FXML 
+	TableColumn<taskEvent, String> prio;
+	
+	@FXML 
 	
 	private WDTAddGuiController addTaskGuiController;
 	Connection connection=null;
@@ -53,7 +56,7 @@ public class WDTMainGuiController implements Initializable {
 			Connection connect =handler.getConnection();
 			ResultSet ResSet= connect.createStatement().executeQuery("SELECT * FROM tasktable");
 			while(ResSet.next()) {
-				list.add(new taskEvent(ResSet.getObject("Date"),ResSet.getString("Title"),ResSet.getString("Description")));	
+				list.add(new taskEvent(ResSet.getObject("Date"),ResSet.getString("Title"),ResSet.getString("Description"), ResSet.getString("Priority")));	
 
 			}
 
@@ -65,6 +68,7 @@ public class WDTMainGuiController implements Initializable {
 		date.setCellValueFactory(new PropertyValueFactory<>("Date"));
 		title.setCellValueFactory(new PropertyValueFactory<>("Title"));
 		desc.setCellValueFactory(new PropertyValueFactory<>("Description"));
+		prio.setCellValueFactory(new PropertyValueFactory<>("Priority"));
 		taskTable.setItems(list);
 
 
@@ -122,3 +126,6 @@ public void deleteClick() {
 		}
 	}
 		
+	
+
+
