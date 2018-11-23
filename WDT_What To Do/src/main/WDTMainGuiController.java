@@ -24,7 +24,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.fxml.Initializable;
 
-public class WDTMainGuiController implements Initializable{
+public class WDTMainGuiController implements Initializable {
 	@FXML
 	Button addButtonMain;
 	@FXML
@@ -36,10 +36,8 @@ public class WDTMainGuiController implements Initializable{
 	@FXML 
 	TableColumn<taskEvent, String> desc;
 	@FXML
-	TableColumn<taskEvent, String> prio;
-	@FXML
-	private WDTAddGuiController addTaskGuiController;
 	
+	private WDTAddGuiController addTaskGuiController;
 	Connection connection=null;
 	ResultSet ResultS=null;
 	DataBaseHandler handler;
@@ -86,30 +84,41 @@ public class WDTMainGuiController implements Initializable{
 		stage.showAndWait();
 
 	}
+public void deleteClick() {
 
-	public void deleteClick() throws SQLException{
+		taskEvent selectedItem =(taskEvent)taskTable.getSelectionModel().getSelectedItem();
+		int selectedIndex=taskTable.getSelectionModel().getSelectedIndex();	
+		if(selectedIndex>=0){
+			String tempTitle =selectedItem.getTitle();
+			connection = handler.getConnection();
+			String query1 = "DELETE FROM tasktable WHERE Title=?;";      
+			
+				try {
+					PrepStat = connection.prepareStatement(query1);
+					PrepStat.setString(1, tempTitle);
+					PrepStat.executeUpdate();   
+					connection.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			taskTable.getItems().remove(selectedIndex);
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Task deleted");
+			alert.setHeaderText("Selected task deleted");
+			alert.showAndWait();
+			} 
 		
-		int selectedIndex = taskTable.getSelectionModel().getSelectedIndex();
-		
-		    if(selectedIndex >= 0){
-		        connection = handler.getConnection();
-		        
-				String query1 = "DELETE FROM tasktable WHERE Title = ? ;";      
-				
-				PrepStat = connection.prepareStatement(query1);              
-		        PrepStat.setString(1, title.getText()); 
-		        PrepStat.execute();       
-		        
-		        taskTable.getItems().remove(selectedIndex);
-		    } else {
-		        Alert alert = new Alert(AlertType.ERROR);
-		        alert.setTitle("ERROR:");
-		        alert.setHeaderText("No task selected");
-		        alert.setContentText("Please select task to delete.");
-		        alert.showAndWait();
-		    }
+			else
+			{
+			
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("ERROR:");
+			alert.setHeaderText("No task selected");
+			alert.setContentText("Please select task to delete.");
+			alert.showAndWait();
+			}
 		}
 	}
-
-
-
+		
