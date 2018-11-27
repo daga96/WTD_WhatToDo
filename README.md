@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# WTD_WhatToDo
-학교 프로젝트의 리포지토리입니다.
-
-=======
-=======
->>>>>>> f8a57668559711d48c6c8e4835efd62fd6c0c1a5
 # WDT_What To Do :page_with_curl:[Eng/Kr]
 **WDT** is a simple to-do list type of program which allows user to create and delete tasks from the list and storage it in the SQL database.\
 Option for adding task are as follows : *Date, Title, Description, Priority*
@@ -25,7 +17,7 @@ Option for adding task are as follows : *Date, Title, Description, Priority*
 ## Built With [소프트웨어]
 •	Eclipse Photon Release (4.8.0)\
 •	JavaFX Scene Builder 10.0.0\
-•	MySQL workbench 8.0\
+•	MySQL workbench 8.0
 
 ### Technologies used [사용될 기술]
 •	Java/JavaFX\
@@ -39,7 +31,3 @@ Option for adding task are as follows : *Date, Title, Description, Priority*
 ## Acknowledgments[참고한 자료]
 Java + SQL Connection tutorial/ 자습서https://www.programcreek.com/java-api-examples/java.sql.Connection\
 MySQL Connector Jar https://dev.mysql.com/downloads/connector/j/8.0.html
-<<<<<<< HEAD
->>>>>>> f8a57668559711d48c6c8e4835efd62fd6c0c1a5
-=======
->>>>>>> f8a57668559711d48c6c8e4835efd62fd6c0c1a5
