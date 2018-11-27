@@ -30,7 +30,7 @@
       				<Image url="@../../bin/CSS/icon.png" />
       			</image>
       		</ImageView>
-      				<TableView fx:id="taskTable" fixedCellSize="0.0" layoutX="17.0" layoutY="141.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0">
+      				<TableView fx:id="taskTable" fixedCellSize="0.0" layoutX="12.0" layoutY="140.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="500.0">
       					<columns>
       						<TableColumn fx:id="date" maxWidth="3000.0" prefWidth="120.0" text="Date" />
       						<TableColumn fx:id="title" prefWidth="150.0" text="Title" />

@@ -47,7 +47,7 @@ public class taskEvent {
 		this.date = date;
 	}
 	
-	
+
 }
 
 

@@ -41,6 +41,10 @@ public class WDTAddGuiController implements Initializable {
 	TextField description;
 	@FXML
 	ToggleGroup priority;
+	
+	
+
+				
 
 	String query ="INSERT INTO tasktable(Date,Title,Description,Priority)"+" VALUES (?,?,?,?)";
 	public void initialize(URL url, ResourceBundle rb) {
@@ -48,11 +52,11 @@ public class WDTAddGuiController implements Initializable {
 		// TODO
 
 	}    
-
+	
 	public void addTaskClick(ActionEvent e) {
-
+		
 		RadioButton selectedRadioButton = (RadioButton) priority.getSelectedToggle();
-
+		
 		conn = handler.getConnection();
 
 		try
@@ -69,7 +73,7 @@ public class WDTAddGuiController implements Initializable {
 			PrepStat.setString(2, title.getText());
 			PrepStat.setString(3, description.getText());
 			PrepStat.setString(4, selectedRadioButton.getText());
-
+			
 			PrepStat.executeUpdate();
 			conn.close();
 		} 
@@ -88,11 +92,11 @@ public class WDTAddGuiController implements Initializable {
 
 	}
 
+
 	public void ClearFields() {
 		date.setValue(null);
 		title.clear();
 		description.clear();
-		priority.selectToggle(null);
 	}
 	public void cancelClick() throws IOException {
 		Stage stage = (Stage) cancelButton.getScene().getWindow();

@@ -9,27 +9,38 @@
 
 }
 .radio-button .radio{
--fx-background-color : #f7941e;
+-fx-border-width     : 1px   ;
+-fx-border-color     : #ffbe76 ;
+-fx-background-color : #ffbe76 ;
 -fx-background-image : null  ;
 -fx-border-radius    : 15px  ;
 }
 .radio-button .radio:selected{
--fx-background-color : #f7941e;
+-fx-background-color : #ff7979 ;
 -fx-background-image : null  ;
 }
-.radio-button .radio:hover{
--fx-background-color : #f6b93b;
+.radio-button -radio:armed{
+-fx-background-color :#ffbe76 ;
+-fx-background-image : null  ;
+}
+.radio-button -radio:determinate{
+-fx-background-color : #ffbe76 ;
+-fx-background-image : null  ;
+}
+.radio-button -radio:indeterminate{
+-fx-background-color : #ffbe76 ;
+-fx-background-image : null  ;
 }
 
 #cancel {
-    -fx-background-color:#f7941e;
+    -fx-background-color:#ffbe76;
     -fx-background-radius: 20;
     -fx-background-insets: 0;
     -fx-text-fill: #3D4855;
 }
 
 #cancel:hover {
-  -fx-background-color: #f6b93b;
+  -fx-background-color: #f0932b;
 
 }
 .date-picker{
@@ -41,19 +52,19 @@
 }
 
 .date-picker > .arrow-button {
--fx-background-color: #f7941e;
+-fx-background-color: #ffbe76;
 }
 
 .date-picker-popup > * > .day-cell { 
     -fx-text-fill: black;
   }
 .date-picker-popup > * > .today:focused { 
-    -fx-background-color: #f6b93b;
-    
+    -fx-background-color: #ffbe76;
+    -fx-opacity:0.2;
 }
 
 .date-picker-popup > * > .selected { 
-    -fx-background-color:#f6b93b;
+    -fx-background-color:  #ffbe76;
     -fx-background-radius:5 5 5 5;
 }
 .date-picker-popup > .month-year-pane {
@@ -67,5 +78,5 @@
  -fx-border-width: 0 0 2 0;
  -fx-border-color:#ffbe76;
  -fx-text-fill: #ecf0f1;
-        
+      
 }
