@@ -37,9 +37,9 @@ public class WDTMainGuiController implements Initializable {
 	TableColumn<taskEvent, String> desc;
 	@FXML 
 	TableColumn<taskEvent, String> prio;
-	
+
 	@FXML 
-	
+
 	private WDTAddGuiController addTaskGuiController;
 	Connection connection=null;
 	ResultSet ResultS=null;
@@ -88,7 +88,7 @@ public class WDTMainGuiController implements Initializable {
 		stage.showAndWait();
 
 	}
-public void deleteClick() {
+	public void deleteClick() {
 
 		taskEvent selectedItem =(taskEvent)taskTable.getSelectionModel().getSelectedItem();
 		int selectedIndex=taskTable.getSelectionModel().getSelectedIndex();	
@@ -96,36 +96,36 @@ public void deleteClick() {
 			String tempTitle =selectedItem.getTitle();
 			connection = handler.getConnection();
 			String query1 = "DELETE FROM tasktable WHERE Title=?;";      
-			
-				try {
-					PrepStat = connection.prepareStatement(query1);
-					PrepStat.setString(1, tempTitle);
-					PrepStat.executeUpdate();   
-					connection.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
+
+			try {
+				PrepStat = connection.prepareStatement(query1);
+				PrepStat.setString(1, tempTitle);
+				PrepStat.executeUpdate();   
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			taskTable.getItems().remove(selectedIndex);
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Task deleted");
 			alert.setHeaderText("Selected task deleted");
 			alert.showAndWait();
-			} 
-		
-			else
-			{
-			
+		} 
+
+		else
+		{
+
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("ERROR:");
 			alert.setHeaderText("No task selected");
 			alert.setContentText("Please select task to delete.");
 			alert.showAndWait();
-			}
 		}
 	}
-		
-	
+}
+
+
 
 
