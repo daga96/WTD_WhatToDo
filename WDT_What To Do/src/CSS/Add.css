@@ -44,7 +44,7 @@
 
 }
 .date-picker{
-
+-fx-focus-color: transparent;
 }
 
 .date-cell{
@@ -78,5 +78,5 @@
  -fx-border-width: 0 0 2 0;
  -fx-border-color:#ffbe76;
  -fx-text-fill: #ecf0f1;
-        
+      
 }
