@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f8a57668559711d48c6c8e4835efd62fd6c0c1a5
 # WDT_What To Do :page_with_curl:[Eng/Kr]
 **WDT** is a simple to-do list type of program which allows user to create and delete tasks from the list and storage it in the SQL database.\
 Option for adding task are as follows : *Date, Title, Description, Priority*
@@ -67,9 +63,8 @@ Option for adding task are as follows : *Date, Title, Description, Priority*
 •	CSS
 
 ## Author [제작자]
-•	Dagmara Lukanko 
+•	Dagmara Lukanko
 
 ## Acknowledgments[참고한 자료]
 Java + SQL Connection tutorial/ 자습서https://www.programcreek.com/java-api-examples/java.sql.Connection\
 MySQL Connector Jar https://dev.mysql.com/downloads/connector/j/8.0.html
->>>>>>> 4d3ce03fe75a8a2077e8f1f0d595102a70f47b3b
